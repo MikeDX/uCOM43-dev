@@ -1,0 +1,30 @@
+// Simple µC43 Example
+// Demonstrates basic language features
+
+function main() {
+    // Initialize system
+    dp = 0x30;              // Set data pointer to RAM area
+    
+    // Simple output test
+    output(0xE, 0xF);       // Turn on all LEDs
+    
+    // Store value in memory
+    acc = 0x5;              // Load value 5
+    ram[dp] = acc;          // Store in RAM
+    
+    // Read input and echo to output
+    acc = input(0xA);       // Read from input port A
+    output(0xE, acc);       // Echo to output port E
+    
+    return;
+}
+
+function blink() {
+    // LED blinker function
+    while (true) {
+        output(0xE, 0xF);   // LEDs on
+        delay(1000);        // Wait 1000 timer ticks
+        output(0xE, 0x0);   // LEDs off
+        delay(1000);        // Wait 1000 timer ticks
+    }
+} 

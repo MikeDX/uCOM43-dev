@@ -1,0 +1,16 @@
+// Simple µC43 Example - Works with current compiler
+// Demonstrates currently implemented features
+
+function main() {
+    // Basic assignments
+    acc = 5;                // Load 5 into accumulator
+    dp = 0x30;              // Set data pointer
+    ram[dp] = acc;          // Store ACC in RAM
+    
+    // I/O operations
+    output(0xE, 15);        // Output 15 to port E
+    acc = input(0xA);       // Read from input port A
+    output(0xE, acc);       // Echo input to port E
+    
+    return;                 // Return from function
+} 
